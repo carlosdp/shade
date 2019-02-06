@@ -5,8 +5,7 @@ use html::Component;
 use virtual_dom::{Listener, VNode};
 
 /// The html! entrypoint and this implementation had to be separated to prevent infinite recursion.
-#[doc(hidden)]
-#[macro_export(local_inner_macros)]
+#[macro_export]
 macro_rules! html_impl {
     ($stack:ident (< > $($tail:tt)*)) => {
         let vlist = $crate::virtual_dom::VList::new();

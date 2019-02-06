@@ -82,7 +82,7 @@ pub mod prelude;
 pub mod scheduler;
 pub mod virtual_dom;
 
-use prelude::{Component,Renderable};
+use prelude::{App,Component,Renderable};
 
 /// Run `App` with a component in a context.
 pub fn run<COMP>()
