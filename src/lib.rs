@@ -82,9 +82,13 @@ pub mod prelude;
 pub mod scheduler;
 pub mod virtual_dom;
 
-use std::cell::RefCell;
-use std::rc::Rc;
+use prelude::{Component,Renderable};
 
-type Shared<T> = Rc<RefCell<T>>;
+/// Run `App` with a component in a context.
+pub fn run<COMP>()
+where
+    COMP: Component + Renderable<COMP>,
+{
 
-struct Hidden;
+    App::<COMP>::new().mount_to_body();
+}

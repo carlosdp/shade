@@ -3,14 +3,13 @@
 use std::rc::Rc;
 use std::cell::RefCell;
 use std::marker::PhantomData;
-use serde::{Serialize, Deserialize};
+use scheduler::{Runnable, Shared, scheduler};
 use bincode;
 use anymap::{AnyMap, Entry};
 use slab::Slab;
 use stdweb::Value;
 use scheduler::{Runnable, scheduler};
 use callback::Callback;
-use Shared;
 
 #[derive(Serialize, Deserialize)]
 enum ToWorker<T> {

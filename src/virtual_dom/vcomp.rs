@@ -9,7 +9,8 @@ use std::marker::PhantomData;
 use std::rc::Rc;
 use wasm_bindgen::JsCast;
 use web_sys::{window, Element, Node};
-use Hidden;
+
+struct Hidden;
 
 type AnyProps = (TypeId, *mut Hidden);
 

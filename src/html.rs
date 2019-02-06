@@ -4,14 +4,13 @@
 //! to create own UI-components.
 
 use callback::Callback;
-use scheduler::{scheduler, Runnable};
 use std::cell::RefCell;
 use std::rc::Rc;
 use virtual_dom::{Listener, VDiff, VNode};
 use wasm_bindgen::prelude::*;
 use wasm_bindgen::JsCast;
 use web_sys::{Element, EventTarget, HtmlSelectElement, Node};
-use Shared;
+use scheduler::{Runnable, Shared, scheduler};
 
 /// A handle to an event listener
 pub struct EventListenerHandle {

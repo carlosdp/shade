@@ -13,7 +13,7 @@ use wasm_bindgen::prelude::*;
 pub fn start() {
     console_log::init();
     info!("Starting...");
-    App::<Model>::new().mount_to_body();
+    plaster::run::<Model>();
 }
 
 fn main() {}

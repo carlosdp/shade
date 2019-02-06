@@ -4,8 +4,9 @@
 use html::Component;
 use virtual_dom::{Listener, VNode};
 
-/// some docs
-#[macro_export]
+/// The html! entrypoint and this implementation had to be separated to prevent infinite recursion.
+#[doc(hidden)]
+#[macro_export(local_inner_macros)]
 macro_rules! html_impl {
     ($stack:ident (< > $($tail:tt)*)) => {
         let vlist = $crate::virtual_dom::VList::new();
@@ -274,7 +275,7 @@ macro_rules! html_impl {
     };
 }
 
-/// some docs
+/// This macro implements JSX-like templates.
 // This entrypoint and implementation had separated to prevent infinite recursion.
 #[macro_export]
 macro_rules! html {
